@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Car{
+            constructor(marca, culoare, motor){
+                console.log('Se executa codul din constructor');
+                this.marca = marca;
+                this.culoare = culoare;
+                this.motor = motor;
+            }
+            get mymarca(){
+                return this.marca;
+            }
+            set mymarca(marcaNoua){
+                this.marca = marcaNoua;
+            }
+        }
+
+        const mycar = new Car('BMW', 'negru', '2.0');
+        console.log('car :>> ', mycar);
+        //mycar.marca();
+        mycar.marca = 'Dacia';
+        mycar.mymarca = 'Audi';
+
+        console.log('car :>> ', mycar);
+    </script>
+</body>
+</html>
