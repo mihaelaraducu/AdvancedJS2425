@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Automobil {
+            constructor(marca, model) {
+                if (this.constructor === Automobil) {
+                    throw new Error("Automobil este o clasă abstractă și nu poate fi instanțiată direct.");
+                }
+                this.marca = marca;
+                this.model = model;
+            }
+
+            porneste() {
+                throw new Error("Metoda 'porneste()' trebuie implementată.");
+            }
+
+            opreste() {
+                throw new Error("Metoda 'opreste()' trebuie implementată.");
+            }
+
+            conduce() {
+                console.log(`${this.marca} ${this.model} este în mișcare.`);
+            }
+        }
+
+        class MasinaElectrica extends Automobil {
+            constructor(marca, model) {
+                super(marca, model);
+            }
+
+            porneste() {
+                console.log("Motorul electric a fost pornit.");
+            }
+
+            opreste() {
+                console.log("Mașina s-a oprit.");
+            }
+        }
+
+       //let car = new Automobil('Dacia', 'Logan');
+       //car.porneste();
+        
+        const tesla = new MasinaElectrica("Tesla", "Model 3");
+        console.log('tesla :>> ', tesla);
+        tesla.porneste();    // Motorul electric a fost pornit.
+        tesla.conduce();     // Tesla Model 3 este în mișcare.
+        tesla.opreste();     // Mașina s-a oprit.
+
+
+    </script>
+</body>
+
+</html>
