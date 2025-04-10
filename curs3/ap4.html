@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(_name, _title) {
+                this.name = _name;
+                this.title = _title;
+            }
+
+            //public
+            getName = function () {
+                return this.name;
+            }
+
+
+            details = function () {
+                return `${this.name} is a ${this.title}.`;
+            }
+
+
+
+        }
+
+        const person = new Person('Ion', 'Web developer');
+        person.name = "Vasile";
+        console.log(person.getName())
+        //Ion
+
+
+        console.log(person.details())
+        // Ion is a Web developer.
+    </script>
+</body>
+
+</html>
