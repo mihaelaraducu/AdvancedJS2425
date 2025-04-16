@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Observable {
+            constructor() {
+                // Constructorul inițializează un array gol de observatori
+                this.observers = [];
+            }
+
+            // Metoda subscribe adaugă o funcție (observator) în lista de observatori
+            subscribe(func) {
+                this.observers.push(func);
+            }
+
+            // Metoda unsubscribe elimină o funcție (observator) din lista de observatori
+            unsubscribe(func) {
+                this.observers = this.observers.filter(observer => observer !== func);
+            }
+
+            // Metoda notify notifică toți observatorii din listă, trimițându-le datele primite ca parametru
+            notify(data) {
+                this.observers.forEach(observer => observer(data));
+            }
+
+            // Metoda fire apelează fiecare observator din listă, folosind un context specific (thisObj) sau window
+            fire(o, thisObj) {
+                var scope = thisObj || window;
+                this.observers.forEach(function (item) {
+                    item.call(scope, o);
+                });
+            }
+        }
+
+        // Funcție care va fi folosită ca observator
+        var clickHandler = function (item) {
+            console.log("fired: " + item);
+        };
+
+        // Creăm o instanță a clasei Observable
+        var click = new Observable();
+
+        // Adăugăm observatorul clickHandler
+        click.subscribe(clickHandler);
+        // Notificăm observatorii cu un eveniment
+        click.fire('event #1');
+        // Eliminăm observatorul clickHandler
+        click.unsubscribe(clickHandler);
+        // Încercăm să notificăm din nou (nu va fi nimeni notificat)
+        click.fire('event #2');
+        // Adăugăm din nou observatorul clickHandler
+        click.subscribe(clickHandler);
+        // Notificăm observatorii cu un alt eveniment
+        click.fire('event #3');
+    </script>
+</body>
+
+</html>

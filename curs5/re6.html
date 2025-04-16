@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Person{
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            describe(){
+                return `${this.name} are ${this.age} ani`;
+            }
+
+        }
+
+        var dan = new Person("Dan", 19);
+        var ion = new Person("Ion", 24);
+        console.log(dan.describe());
+        console.log(ion.describe());
+    </script>
+</body>
+</html>

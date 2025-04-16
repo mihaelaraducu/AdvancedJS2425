@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const user = {
+            fname: 'Ion',
+            lname: 'Popescu'
+        };
+        const copy1 = user;
+        const copy2 = Object.assign({}, user);
+        user.lname = 'Ionescu';
+        copy1.fname = 'Dan';
+        copy2.lname = 'Ana';
+
+        console.log('original:', user);
+        console.log('copia 1:', copy1);
+        console.log('copia2:', copy2);
+    </script>
+</body>
+</html>
