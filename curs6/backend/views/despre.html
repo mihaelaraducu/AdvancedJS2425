@@ -1,0 +1,71 @@
+<div class="container">
+    <h2 class="mb-4">Chestionar Node.js</h2>
+    <form method="POST" action="/rezultat">
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">1. Ce este Node.js?</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" value="a" required>
+                <label class="form-check-label">a) Un framework PHP</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" value="b">
+                <label class="form-check-label">b) Un motor de baze de date</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" value="c">
+                <label class="form-check-label">c) Un runtime JavaScript pe server</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" value="d">
+                <label class="form-check-label">d) Un editor de cod</label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">2. Ce comandă pornește un server Node.js?</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" value="a" required>
+                <label class="form-check-label">a) run server.js</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" value="b">
+                <label class="form-check-label">b) start node.js</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" value="c">
+                <label class="form-check-label">c) execute server</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" value="d">
+                <label class="form-check-label">d) node server.js</label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-bold">3. Ce modul Node.js se folosește pentru a crea un server HTTP?</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q3" value="a" required>
+                <label class="form-check-label">a) net</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q3" value="b">
+                <label class="form-check-label">b) express</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q3" value="c">
+                <label class="form-check-label">c) http</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q3" value="d">
+                <label class="form-check-label">d) server</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Trimite</button>
+    </form>
+
+    <div class="mt-4">
+        {{dinamic}}
+    </div>
+</div>
