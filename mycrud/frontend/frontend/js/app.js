@@ -43,7 +43,7 @@ $(document).ready(function ($) {
         //console.log(data);
         $('#example').dataTable({
             "paging": true,
-            "pageLength": 2,
+            "pageLength": 10,
             processing: true,
             serverSide: false,
             "data": data.data,
@@ -94,7 +94,7 @@ $(document).ready(function ($) {
                  console.log(res.data.id);
                 
                 let datan= moment(res.data.datanastere).format('YYYY-MM-DD');  
-                alert(datan);
+                //alert(datan);
                 $('#id').val(res.data.id);
                 $('#lname').val(res.data.nume);
                 $('#fname').val(res.data.prenume);
