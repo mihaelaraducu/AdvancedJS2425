@@ -1,3 +1,4 @@
 {
-    "terminal.integrated.suggest.enabled": false
+    "terminal.integrated.suggest.enabled": false,
+    "liveServer.settings.port": 5501
 }
